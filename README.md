@@ -1,1 +1,1 @@
-Xin Chao!
+Xin Chao! Các bạn đã ghé thăm Git của mình!
