@@ -1,0 +1,598 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: black;
+}
+html,
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #717171;
+}
+.section {
+    padding: 75px 0;
+}
+
+.title {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: #ec7532;
+    border-bottom: 1px solid #d8d8d8;
+    position: relative;
+}
+.title::after {
+    display: block;
+    width: 125px;
+    height: 4px;
+    content: "";
+    background-image: linear-gradient(to right, #fbbd61, #ec7532);
+    margin-top: 20px;
+}
+.title--white {
+    color: white;
+    border-color: #333;
+}
+::selection {
+    color: #fff;
+    background: #ec7532;
+}
+
+.line::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    display: block;
+    /* #fbbd61,#ec7532 */
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    box-shadow: 0 0 20px 0 #fbbd61;
+    transition: all 0.5s;
+}
+.line:hover::after {
+    width: 100%;
+}
+.line.active::after {
+    width: 100%;
+}
+
+/************ HEADER ****************/
+header {
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header p {
+    font-size: 14px;
+    font-weight: 700;
+}
+header .navbar {
+    padding-left: 0;
+    padding-right: 0;
+}
+#movieNavbar .navbar-nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#movieNavbar .navbar-nav .nav-item .nav-link {
+    color: white;
+    padding: 20px 24px;
+    line-height: 0.8em;
+    letter-spacing: 3px;
+}
+
+#headerFixed{    
+    
+    position: fixed;    
+    top: 0;   
+    width: 100%;
+    background-color: #101010;
+    transform: translate(-50%,-100%);
+    transition: transform 0.5s;
+}
+
+
+/******************** CAROUSEL ***************************/
+#MovieCarousel{
+    height: 650px;
+}
+#MovieCarousel .carousel-inner{
+    height: 100%;
+}
+#MovieCarousel .carousel-item{
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#MovieCarousel .carousel-item:nth-child(1){
+    background-image: url('../img/hero-1.jpg');
+}
+
+#MovieCarousel .carousel-item:nth-child(2){
+    background-image: url('../img/hero-2.jpg');
+}
+#MovieCarousel .carousel-item:nth-child(3){
+    background-image: url('../img/hero-3.jpg');
+}
+
+#MovieCarousel .carousel-item .carousel-caption {
+    text-align: left;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#MovieCarousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    opacity: 1;
+    background-clip: border-box;
+    box-sizing: border-box;
+}
+#MovieCarousel .carousel-indicators li.active {
+    background-color: white;
+}
+#MovieCarousel .carousel-indicators {
+    justify-content: flex-start;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#MovieCarousel .carouse-item__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, black, transparent);
+}
+#MovieCarousel .carousel-caption h2 {
+    font-size: 3.25rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+#MovieCarousel .carousel-caption p:first-child {
+    font-size: 0.875rem;
+    color: #fbbd61;
+    letter-spacing: 2px;
+    margin: 0;
+    animation-delay: 0.5s;
+}
+#MovieCarousel .carousel-caption p {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+#MovieCarousel .carousel__trailer {
+    animation-delay: 0.5s;
+}
+#MovieCarousel .carousel__trailer .carousel__age {
+    width: 48px;
+    height: 48px;
+    margin-right: 8px;
+    border: 2px solid white;
+    line-height: 48px;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 50%;
+}
+
+#MovieCarousel .carousel__trailer button {
+    color: white;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    padding: 12px 24px;
+    position: relative;
+    overflow: hidden;
+}
+#MovieCarousel .carousel__trailer button i,
+#MovieCarousel .carousel__trailer button span {
+    position: relative;
+    z-index: 1;
+}
+#MovieCarousel .carousel__trailer button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    display: block;
+    background-color: #ec7532;
+    transform: skewX(30deg) translateX(-110%);
+    transition: all 0.5s;
+}
+#MovieCarousel .carousel__trailer button:hover::before {
+    transform: skewX(30deg) translateX(-10%);
+}
+/* #MovieCarousel .carousel__scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    animation: ScrollDown 1.5s infinite;
+} */
+
+/********************** NEWIN ************************************/
+.newIn__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.newIn__overlay {
+    transform: skewX(30deg) translateX(-150%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fbbd61, #ec7532);
+    opacity: 0.9;
+    /* transform: skewX(30deg) translateX(-25%); */
+    transition: all 0.5s;
+}
+.newIn__img:hover .newIn__overlay {
+    transform: skewX(30deg) translateX(-25%);
+}
+.newIn__play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    transition: all 0.5s;
+}
+.newIn__play i {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.newIn__play i:hover {
+    transform: scale(0.9);
+}
+.newIn__play a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+.newIn__img:hover .newIn__play {
+    opacity: 1;
+}
+.newIn__title {
+    text-align: center;
+}
+.newIn__title h3 {
+    font-size: 18px;
+    color: #4a4a4a;
+    margin: 1rem 0;
+}
+.newIn__title i {
+    color: #fbbd61;
+}
+/*************** SHOWTIME *********************************/
+.showtimes .nav-tabs {
+    border-bottom: 1px solid #d8d8d8;
+}
+.showtimes .nav-tabs .nav-link {
+    border: none;
+    color: #4a4a4a;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+.showtimes .nav-tabs .nav-link.active {
+    color: #ec7532;
+}
+.showtimes .nav-tabs .nav-link span {
+    padding: 15px 30px;
+    display: block;
+}
+.showtimes .nav-tabs .nav-item.show .nav-link,
+.showtimes .nav-tabs .nav-link.active {
+    border: none;
+}
+
+.showtimes .nav-tabs .nav-link:focus,
+.showtimes .nav-tabs .nav-link:hover {
+    border: none;
+}
+
+.showtimes .nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+#myTabContent .showtime__img {
+    border-radius: 10px;
+}
+.showtimes__title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ec7532;
+    margin-bottom: 0;
+}
+#myTabContent h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #101010;
+}
+#myTabContent a {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ec7532;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+#myTabContent a:hover {
+    color: #101010;
+}
+.showtimes__viewing {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+}
+.showtimes__viewing button {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #717171;
+    background-color: #d8d8d8;
+}
+.showtimes__runingTime {
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.showtimes__runingTime span:last-child {
+    font-size: 13px;
+    width: 33px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    color: white;
+    display: inline-block;
+    background-color: #4a4a4a;
+    border-radius: 50%;
+    font-weight: bold;
+}
+#myTabContent .tabRow {
+    border-bottom: 1px solid #d8d8d8;
+}
+#myTabContent .tabRow:last-child {
+    border-bottom: none;
+}
+/***************************** COMINGSOON *******************/
+.comingsoon {
+    background: #101010 url("../img/slide-3.png");
+    background-size: cover;
+    color: white;
+}
+p.comingsoon__title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ec7532;
+    margin: 0;
+}
+.comingsoon h3 {
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.comingsoon__rating i {
+    font-size: 14px;
+}
+.comingsoon__rating > i {
+    color: #fbbd61;
+}
+.comingsoon p {
+    margin: 1rem 0;
+}
+.comingsoon a {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ec7532;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.comingsoon a:hover {
+    color: #101010;
+}
+.comingsoon__video {
+    position: relative;
+}
+
+.comingsoon__video i {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    text-align: center;
+    line-height: 80px;
+    font-size: 25px;
+    border: 1px solid #ec7532;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s;
+    text-indent: 5px;
+}
+.comingsoon__video:hover i {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+/********************** MOVIE LIST ******************************/
+.movieList {
+    background-color: #101010;
+}
+.movieList__item {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.movieList__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #101010;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+.movieList__overlay:hover {
+    opacity: 0;
+}
+
+/************************ CONTACT ********************/
+.contact__content p:first-child {
+    font-size: 23px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+}
+.contact__content a {
+    font-size: 46px;
+    color: #fbbd61;
+    text-decoration: none;
+}
+
+/************************ FOOTER *********************/
+footer {
+    background-color: #101010;
+}
+.footer__content h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #ec7532;
+    margin-bottom: 15px;
+}
+.footer__content ul li{
+    list-style: none;
+}
+.footer__content ul li a{
+    font-size: 13px;    
+    padding: 3px 0;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.footer__content i{
+    width: 25px;
+}
+
+.footer__content ul li a:hover{
+    color: #fbbd61;
+}
+
+.footer__copyright{
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: 15px 0 0;
+    color: white;
+    text-align: center;
+}
+/**************************** Keyframe ***************************/
+@keyframes ScrollDown {
+    0% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(-45%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/********************* Responsive *****************************/
+
+@media screen and (max-width:991.98px){
+    /* HEADER */
+    .header__navbar .navbar-brand{
+        max-width: 180px;
+        
+    }
+    .header__navbar .navbar-brand img{
+        max-width: 100%;
+    }
+    #movieNavbar .navbar-nav .nav-item .nav-link{
+        font-size: 14px;
+        padding: 20px 14px;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width:765.98px){
+    /* GLOBAL */
+    .line.active::after{
+        width: 0;
+    }
+
+    /* HEADER */
+    .header__navbar .navbar-toggler{
+        color:#fbbd61;
+    }
+
+    .header__navbar .navbar-toggler:focus{
+        outline: none;
+    }
+    #movieNavbar .navbar-nav{
+        background-color:rgba(0,0,0,.9);
+        text-align: center;
+    }
+
+    #movieNavbar .navbar-nav .active .nav-link{
+        color: #ec7532;
+    }
+    #headerFixed .navbar{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #MovieCarousel .carousel-caption h2{
+        font-size: 2.5rem;
+    }
+
+    /* SHOWTIMES */
+    .showtimes .nav-tabs .nav-link{
+        font-size: 16px;
+    }
+    .showtimes .nav-tabs .nav-link span{
+        padding:10px 20px;
+    }
+
+}
+
