@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+/******* Input ******/
+@mixin input_text {
+  input[type="text"]  {
+    border: none; 
+    width: 100%; 
+    outline: none;
+  }
+}
+
+/******* Input ******/
+
 header {
   .container {
     display: flex;
@@ -113,6 +124,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
+    
     .text-left {
       .textbox {
         display: flex;
@@ -131,6 +143,7 @@ header {
           line-height: 24px;
           color: #f50e0e;
         }
+        @include input_text;
       }
       
     }
@@ -152,6 +165,7 @@ header {
           line-height: 24px;
           color: #f50e0e;
         }
+        @include input_text;
       }
       .checkbox {
         margin-top: 20px;

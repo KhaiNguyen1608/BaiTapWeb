@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/******* Input ******/
+/******* Input ******/
 header .container {
   display: flex;
   background-color: #000000;
@@ -125,6 +127,11 @@ header .container-fodter ul li a {
   line-height: 24px;
   color: #f50e0e;
 }
+.registercontent .text .text-left .textbox input[type=text] {
+  border: none;
+  width: 100%;
+  outline: none;
+}
 .registercontent .text .text-right .textbox {
   display: flex;
   justify-content: space-between;
@@ -142,6 +149,11 @@ header .container-fodter ul li a {
   font-size: 20px;
   line-height: 24px;
   color: #f50e0e;
+}
+.registercontent .text .text-right .textbox input[type=text] {
+  border: none;
+  width: 100%;
+  outline: none;
 }
 .registercontent .text .text-right .checkbox {
   margin-top: 20px;
