@@ -111,7 +111,8 @@ header {
   .text {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
     .text-left {
       .textbox {
         display: flex;
@@ -131,6 +132,7 @@ header {
           color: #f50e0e;
         }
       }
+      
     }
     .text-right {
       .textbox {
@@ -149,6 +151,22 @@ header {
           font-size: 20px;
           line-height: 24px;
           color: #f50e0e;
+        }
+      }
+      .checkbox {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        h2 {
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 36px;
+          color: #000000;
+        }
+        input[type="radio"] {
+          accent-color: #AE18E2;
         }
       }
       button {

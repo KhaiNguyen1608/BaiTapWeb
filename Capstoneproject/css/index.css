@@ -104,7 +104,8 @@ header .container-fodter ul li a {
 .registercontent .text {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
 }
 .registercontent .text .text-left .textbox {
   display: flex;
@@ -141,6 +142,22 @@ header .container-fodter ul li a {
   font-size: 20px;
   line-height: 24px;
   color: #f50e0e;
+}
+.registercontent .text .text-right .checkbox {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.registercontent .text .text-right .checkbox h2 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+}
+.registercontent .text .text-right .checkbox input[type=radio] {
+  accent-color: #AE18E2;
 }
 .registercontent .text .text-right button {
   background: #ae18e2;
