@@ -100,14 +100,26 @@ header .container-fodter ul li a {
   padding: 13px 35px;
 }
 
+.registercontent {
+  width: 100%;
+}
 .registercontent h2 {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
   text-align: center;
 }
 .registercontent .text {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 99px;
+}
+.registercontent .text .text-left {
+  width: 40%;
 }
 .registercontent .text .text-left .textbox {
   display: flex;
@@ -116,6 +128,7 @@ header .container-fodter ul li a {
   border-bottom: 2px solid #ae18e2;
 }
 .registercontent .text .text-left .textbox h2 {
+  font-family: "Inter";
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
@@ -127,10 +140,33 @@ header .container-fodter ul li a {
   line-height: 24px;
   color: #f50e0e;
 }
-.registercontent .text .text-left .textbox input[type=text] {
+.registercontent .text .text-left .textbox input[type=text],
+.registercontent .text .text-left .textbox input[type=password] {
   border: none;
   width: 100%;
   outline: none;
+}
+.registercontent .text .text-left .textbox input[type=number] {
+  border: none;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+}
+.registercontent .text .text-left .textbox input::-webkit-outer-spin-button,
+.registercontent .text .text-left .textbox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.registercontent .text .text-left .textbox input,
+.registercontent .text .text-left .textbox input::placeholder {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  color: #000000;
+}
+.registercontent .text .text-right {
+  width: 40%;
 }
 .registercontent .text .text-right .textbox {
   display: flex;
@@ -150,10 +186,30 @@ header .container-fodter ul li a {
   line-height: 24px;
   color: #f50e0e;
 }
-.registercontent .text .text-right .textbox input[type=text] {
+.registercontent .text .text-right .textbox input[type=text],
+.registercontent .text .text-right .textbox input[type=password] {
   border: none;
   width: 100%;
   outline: none;
+}
+.registercontent .text .text-right .textbox input[type=number] {
+  border: none;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+}
+.registercontent .text .text-right .textbox input::-webkit-outer-spin-button,
+.registercontent .text .text-right .textbox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.registercontent .text .text-right .textbox input,
+.registercontent .text .text-right .textbox input::placeholder {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  color: #000000;
 }
 .registercontent .text .text-right .checkbox {
   margin-top: 20px;

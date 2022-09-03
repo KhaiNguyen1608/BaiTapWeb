@@ -42,45 +42,45 @@
         <div class="text">
             <div class="text-left">
                 <div class="textbox">
-                    <input type="text" name="Email" id="Email" class="form-control" placeholder="Email">
+                    <input type="text" name="Email" id="input_Email" class="form-control" placeholder="Email">
                     <span>(*)</span>
                 </div>
                 <div class="textbox">
-                    <input type="text" name="Password" id="Password" class="form-control" placeholder="Password">
+                    <input type="password" name="Password" id="input_Password" class="form-control" placeholder="Password">
                     <span>(*)</span>
                 </div>
                 <div class="textbox">
-                    <input type="text" name="Password confirm" id="Password confirm" class="form-control" placeholder="Password confirm">
+                    <input type="password" name="Passwordconfirm" id="input_Passwordconfirm" class="form-control" placeholder="Password confirm">
                     <span>(*)</span>
                 </div>
               
             </div>
             <div class="text-right">
                 <div class="textbox">
-                    <input type="text" name="Name" id="Name" class="form-control" placeholder="Name">
+                    <input type="text" name="Name" id="input_Name" class="form-control" placeholder="Name">
                     <span>(*)</span>
                 </div>
                 <div class="textbox">
-                    <input type="text" name="Phone" id="Phone" class="form-control" placeholder="Phone">
+                    <input type="number" name="Phone" id="input_Phone" class="form-control" placeholder="Phone" number-only>
                     <span>(*)</span>
                 </div>
                 <div class="checkbox">
                     <h2>Gender</h2>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="" id="" checked>
+                      <input class="form-check-input" type="radio" value="" id="isMale" onclick="fnCheckRadioButton('isMale')" checked>
                       <label class="form-check-label" for="">
                        Male
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="" id="">
+                      <input class="form-check-input" type="radio" value="" id="isFemale" onclick="fnCheckRadioButton('isFemale')">
                       <label class="form-check-label" for="">
                         Female
                       </label>
                     </div>
                 </div>
                
-                <button>Submit</button>
+                <button onclick="fnSubmit()">Submit</button>
             </div>
         </div>
     </div>
@@ -88,6 +88,7 @@
     <div class="foodter">
         <img src="./img/image 8 (1).png" alt="">
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/register.js"></script>
 </body>
 
