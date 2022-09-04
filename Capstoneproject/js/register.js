@@ -1,4 +1,12 @@
-
+class myUser {
+    constructor(userEmail,userPass,userName,userPhone,userGender){
+      this.userEmail = userEmail;
+        this.userPass = userPass;
+        this.userName = userName;
+        this.userPhone = userPhone;
+        this.userGender = userGender;
+    }
+}
 
 let fnCheckRadioButton = (btn) => {
     if(btn === 'isMale' ) {
@@ -13,7 +21,38 @@ let fnCheckRadioButton = (btn) => {
 
 
 let fnValidate = (param,confirmPass) => {
-    // if(param._email)
+    let regNumber = /[^0-9]/g; //Kiểm tra Chỉ có các ký tự số
+    let onlyLetter = /^[A-Za-z]+$/;
+    let regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let regPass = new RegExp('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{0,}$/');
+    let regDate = new RegExp('/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/');
+
+    var tempName = removeVietnameseTones(param.userName)
+
+    if(param.userEmail.trim() === '' || !regEmail.test(param.userEmail)) {
+        document.getElementById("tbEmail").innerHTML = '** Email phải đúng định dạng, không để trống **'
+        document.getElementById("tbEmail").style.display = 'inline-block'
+        isValid = false;
+    }
+
+    if(param.userPass.trim() === '' || param.userPass.length < 6 || param.userPass.length > 10 ||regPass.test(param.userPass)) {
+        document.getElementById("tbMatKhau").innerHTML = '** Mật Khẩu từ 6-10 ký tự (chứa ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt), không để trống **'
+        document.getElementById("tbMatKhau").style.display = 'inline-block'
+        isValid = false;
+    }
+
+    if(param.userName.trim() === '' || !onlyLetter.test(tempName)) {
+        document.getElementById("tbTen").innerHTML = '** Tên user phải là chữ, không để trống **'
+        document.getElementById("tbTen").style.display = 'inline-block'
+        isValid = false;
+    }
+  
+    if(param.userPhone === '' || regNumber.test(param.userPhone)) {
+        document.getElementById("tbGiolam").innerHTML = '** Số giờ làm trong tháng 80 - 200 giờ, không để trống **'
+        document.getElementById("tbGiolam").style.display = 'inline-block'
+        isValid = false;
+    }
+
 }
 
 let fnSubmit = () => {
@@ -45,9 +84,7 @@ let fnSubmit = () => {
     });
 
     promise.catch(function(err){
-       
         window.alert(err.response.data.message)
     })
 }
 
-import {myUser} from "../models/user"
