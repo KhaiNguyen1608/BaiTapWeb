@@ -253,7 +253,9 @@ header .container-fodter ul li a {
 
 .productdetail .container-produc {
   display: flex;
-  justify-content: space-between;
+}
+.productdetail .container-produc img {
+  width: 100%;
 }
 .productdetail .container-produc .productdetail-text h2 {
   font-weight: 300;
@@ -333,7 +335,6 @@ header .container-fodter ul li a {
   font-size: 24px;
   line-height: 29px;
   color: #000000;
-  width: 50%;
 }
 .product-feature .productfeature-item .product-item p:last-of-type {
   font-weight: 300;

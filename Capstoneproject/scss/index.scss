@@ -246,8 +246,9 @@ header {
 .productdetail {
   .container-produc {
     display: flex;
-    justify-content: space-between;
-    .img {
+    // justify-content: space-between;
+    img {
+      width: 100%;
     }
     .productdetail-text {
       h2 {
@@ -334,7 +335,7 @@ header {
         font-size: 24px;
         line-height: 29px;
         color: #000000;
-        width: 50%;
+        // width: 50%;
       }
       p:last-of-type {
         font-weight: 300;
